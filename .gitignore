@@ -1,0 +1,44 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS folder attributes
+.localized
+Icon?
+._*
+
+# Thumbnails
+.TemporaryItems
+.Trashes
+.Spotlight-V100
+.VolumeIcon.icns
+
+# macOS swap files
+*.swp
+*.swo
+
+# macOS resource forks
+.DS_Store?
+._*
+.fseventsd
+
+# Hugo build files
+public/
+.hugo_build.lock
+resources/_gen/
+
+# Hugo development
+.hugo_build.lock
+node_modules/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+Thumbs.db
+ehthumbs.db

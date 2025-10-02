@@ -1,0 +1,89 @@
+baseURL = 'https://mcmurray.tech/'
+languageCode = 'en-us'
+title = 'Michael McMurray'
+theme = 'PaperMod'
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  defaultTheme = 'dark'            # force dark theme
+  disableThemeToggle = false
+  ShowShareButtons = false
+  showReadingTime = true
+  showPostNavLinks = true
+  ShowBreadCrumbs = true
+  showCodeCopyButtons = true
+  
+  # Disable related content and recommendations
+  ShowRelatedContent = false
+  hideFooter = false
+  disableSpecial1stPost = true
+  disableScrollToTop = false
+  
+  # Hide recent posts from homepage
+  homeInfoParams = {}
+  ShowPostNavLinks = false
+  ShowToc = false
+  displayFullLangName = true
+  ShowFullTextinRSS = true
+
+  # Profile mode disabled - using custom homepage
+  [params.profileMode]
+    enabled = false
+    
+  # Show read time and navigation
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = false  # Disable breadcrumbs on homepage
+  
+  # Purple theme color
+  defaultTheme = 'dark'
+  primaryColor = '#7066ff'
+
+  # social icons (PaperMod reads this under 'socialIcons')
+  [[params.socialIcons]]
+    name = "github"
+    url  = "https://github.com/Michael-XKCD"
+    title = "GitHub Profile"
+  [[params.socialIcons]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/in/m-mcmurray/"
+    title = "LinkedIn Profile"
+
+# Menus
+[menu]
+  [[menu.main]]
+    name = "About"
+    url  = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Projects"
+    url  = "/projects/"
+    weight = 2
+  [[menu.main]]
+    name = "Blog"
+    url  = "/posts/"
+    weight = 3
+
+# WordPress-like permalink pattern (adjust if needed)
+[permalinks]
+  posts = "/:year/:month/:day/:slug/"
+
+# Allow HTML in markdown for achievements section
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# Disable related content
+[related]
+  includeNewer = false
+  threshold = 0
+  toLower = false
+  [[related.indices]]
+    name = "tags"
+    weight = 0
+  [[related.indices]]
+    name = "categories"
+    weight = 0

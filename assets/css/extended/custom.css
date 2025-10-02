@@ -1,0 +1,374 @@
+/* Custom styles with purple theme */
+:root {
+    --purple-primary: #7066ff;
+    --purple-secondary: #9b51e0;
+    --purple-light: rgba(112, 102, 255, 0.1);
+    --purple-gradient: linear-gradient(135deg, #7066ff 0%, #9b51e0 100%);
+}
+
+/* Centered profile header */
+.profile-header {
+    text-align: center;
+    margin: 2rem 0 3rem 0;
+}
+
+/* Rotating text as subtitle */
+.subtitle-rotating {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: rgba(112, 102, 255, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid var(--purple-primary);
+}
+
+#rotating-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #888;
+    display: inline-block;
+    min-height: 1.5rem;
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
+    font-style: italic;
+}
+
+.profile-image-container {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.profile-image {
+    width: 250px !important;
+    height: 250px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    transition: transform 0.3s ease;
+    display: block;
+    /* Force circular shape with stronger CSS */
+    aspect-ratio: 1 / 1 !important;
+    overflow: hidden !important;
+    clip-path: circle(50%) !important;
+    /* Ensure it takes up the exact space */
+    min-width: 250px;
+    min-height: 250px;
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+/* Clean social icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(112, 102, 255, 0.1);
+    border: 2px solid var(--purple-primary);
+    border-radius: 50%;
+    color: var(--purple-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: none;
+}
+
+.social-icon:hover {
+    background: var(--purple-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(112, 102, 255, 0.3);
+    text-decoration: none;
+}
+
+.social-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 768px) {
+    .profile-image {
+        width: 180px !important;
+        height: 180px !important;
+        min-width: 180px;
+        min-height: 180px;
+        max-width: 180px;
+        max-height: 180px;
+        clip-path: circle(50%) !important;
+    }
+    
+    .social-icons {
+        gap: 1rem;
+    }
+    
+    .social-icon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .social-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.achievements {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.achievement-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 2rem;
+    align-items: start;
+    /* Adjust vertical alignment */
+    grid-template-rows: auto;
+}
+
+.achievement-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    justify-self: center;
+    /* Move icon down to center with text content */
+    margin-top: 20px;
+}
+
+.achievement-icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.achievement-icon:hover {
+    transform: scale(1.1);
+}
+
+.achievement-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.achievement-content h3 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+}
+
+.achievement-content p,
+.achievement-content ul {
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .achievement-item {
+        grid-template-columns: 80px 1fr;
+        gap: 1.5rem;
+    }
+    
+    .achievement-icon {
+        width: 60px;
+        height: 60px;
+        margin-top: 15px;
+    }
+    
+    .achievement-icon img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .social-icon {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Tech Stack Grid Section */
+.tech-stack {
+    margin: 2rem 0;
+}
+
+.tech-category {
+    margin-bottom: 3rem;
+}
+
+.tech-category h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: var(--purple-primary);
+    font-weight: 600;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: rgba(112, 102, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(112, 102, 255, 0.2);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.tech-item:hover {
+    background: rgba(112, 102, 255, 0.1);
+    border-color: var(--purple-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(112, 102, 255, 0.2);
+}
+
+/* Header rotating text styling */
+#header-rotating-title {
+    transition: opacity 0.8s ease-in-out;
+}
+
+.tech-icon {
+    margin-bottom: 0.8rem;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tech-icon svg {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
+.tech-item:hover .tech-icon svg {
+    transform: scale(1.1);
+}
+
+.tech-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--content);
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .tech-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1rem;
+    }
+    
+    .tech-item {
+        padding: 1rem 0.5rem;
+    }
+    
+    .tech-icon {
+        font-size: 1.5rem;
+    }
+    
+    .tech-name {
+        font-size: 0.8rem;
+    }
+}
+
+/* Enhance section headings for better definition */
+.post-content h2 {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.post-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--purple-gradient);
+    border-radius: 2px;
+}
+
+/* First heading should have less top margin */
+.post-content h2:first-of-type {
+    margin-top: 2rem;
+}
+
+.post-content h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* Modern section spacing */
+.section-spacing {
+    margin: 4rem 0;
+}
+
+/* Intro details styling */
+.intro-details {
+    background: rgba(112, 102, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border-left: 4px solid var(--purple-primary);
+}
+
+.intro-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.intro-details li {
+    margin-bottom: 0.5rem;
+    padding-left: 0;
+}
+
+/* Removed old social-links and intro-details styling - no longer needed */
+    box-shadow: 0 8px 16px rgba(112, 102, 255, 0.2);
+    border: 2px solid var(--purple-primary);
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.02);
+}
+
+/* Enhanced post list styling */
+.post-entry {
+    border: 1px solid var(--purple-primary) !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease;
+    background: rgba(112, 102, 255, 0.05) !important;
+}
+
+.post-entry:hover {
+    border-color: var(--purple-secondary) !important;
+    box-shadow: 0 4px 12px rgba(112, 102, 255, 0.2) !important;
+    transform: translateY(-2px);
+}

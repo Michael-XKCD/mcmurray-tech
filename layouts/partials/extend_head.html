@@ -1,0 +1,443 @@
+<style>
+/* Custom styles with purple theme */
+:root {
+    --purple-primary: #7066ff;
+    --purple-secondary: #9b51e0;
+    --purple-light: rgba(112, 102, 255, 0.1);
+    --purple-gradient: linear-gradient(135deg, #7066ff 0%, #9b51e0 100%);
+}
+
+/* Centered profile header */
+.profile-header {
+    text-align: center;
+    margin: 2rem 0 3rem 0;
+}
+
+.profile-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+    /* Force circular shape */
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+/* Clean social icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(112, 102, 255, 0.1);
+    border: 2px solid var(--purple-primary);
+    border-radius: 50%;
+    color: var(--purple-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: none;
+}
+
+.social-icon:hover {
+    background: var(--purple-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(112, 102, 255, 0.3);
+    text-decoration: none;
+}
+
+.social-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 768px) {
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .social-icons {
+        gap: 1rem;
+    }
+    
+    .social-icon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .social-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Minimal section separators */
+.post-content h2 {
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+}
+
+.post-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 1px;
+    background: var(--purple-primary);
+}
+
+/* Experience filtering */
+.experience-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin: 24px 0;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+/* Light mode styling for filters */
+.list:not(.dark) .experience-filters {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.filter-label {
+  font-weight: 600;
+  color: var(--content);
+  margin-right: 8px;
+}
+
+.experience-filter {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--content);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.experience-filter:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.experience-filter.active {
+  background: var(--purple-primary);
+  border-color: var(--purple-primary);
+  color: white;
+}
+
+.experience-entry {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Light mode styling for experience entries */
+.list:not(.dark) .experience-entry {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.experience-entry.hidden {
+  display: none;
+}
+
+.experience-entry:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Light mode hover styling */
+.list:not(.dark) .experience-entry:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.experience-tags, .education-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 16px 0;
+}
+
+.exp-tag, .edu-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--content);
+  transition: all 0.3s ease;
+}
+
+.exp-tag.security, .edu-tag.security {
+  border-color: rgba(239, 68, 68, 0.5);
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.exp-tag.cloud, .edu-tag.cloud {
+  border-color: rgba(59, 130, 246, 0.5);
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.exp-tag.automation, .edu-tag.automation {
+  border-color: rgba(168, 85, 247, 0.5);
+  background: rgba(168, 85, 247, 0.1);
+  color: #a855f7;
+}
+
+.exp-tag.programming, .edu-tag.programming {
+  border-color: rgba(34, 197, 94, 0.5);
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.exp-tag.systems, .edu-tag.systems {
+  border-color: rgba(59, 130, 246, 0.5);
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.exp-tag.tools, .edu-tag.tools {
+  border-color: rgba(245, 158, 11, 0.5);
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.exp-tag.networking, .edu-tag.networking {
+  border-color: rgba(14, 165, 233, 0.5);
+  background: rgba(14, 165, 233, 0.1);
+  color: #0ea5e9;
+}
+
+.exp-tag.database, .edu-tag.database {
+  border-color: rgba(99, 102, 241, 0.5);
+  background: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+}
+
+.exp-tag.collaboration, .edu-tag.collaboration {
+  border-color: rgba(168, 85, 247, 0.5);
+  background: rgba(168, 85, 247, 0.1);
+  color: #a855f7;
+}
+
+/* Education entries styling */
+.education-entry {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Light mode styling for education entries */
+.list:not(.dark) .education-entry {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.education-entry:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Light mode hover styling */
+.list:not(.dark) .education-entry:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive design */
+/* Achievement icons styling */
+.achievement-icon {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95px;
+  height: 95px;
+}
+
+/* Light mode styling for achievement icons */
+.list:not(.dark) .achievement-icon {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.achievement-icon img {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Specific styling for smaller icons that need to scale up */
+.achievement-icon img[src*="first-robotics"],
+.achievement-icon img[src*="prccdc"] {
+  width: 85%;
+  height: 85%;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+/* Light mode filter for achievement icons */
+.list:not(.dark) .achievement-icon img {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+@media (max-width: 768px) {
+  .experience-filters {
+    gap: 8px;
+    padding: 12px;
+  }
+  
+  .experience-filter {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+  
+  .experience-entry, .education-entry {
+    padding: 1rem;
+  }
+  
+  .experience-tags, .education-tags {
+    gap: 6px;
+  }
+  
+  .exp-tag, .edu-tag {
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+  
+  /* Mobile achievement icons */
+  .achievement-icon {
+    width: 75px;
+    height: 75px;
+    padding: 10px;
+    border-radius: 14px;
+  }
+  
+  /* Mobile sizing for smaller icons */
+  .achievement-icon img[src*="first-robotics"],
+  .achievement-icon img[src*="prccdc"] {
+    width: 80%;
+    height: 80%;
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+</style>
+
+<script>
+// Professional Experience Filtering
+document.addEventListener('DOMContentLoaded', function() {
+  // Experience filtering
+  const filters = document.querySelectorAll('.experience-filter');
+  const entries = document.querySelectorAll('.experience-entry');
+  
+  filters.forEach(filter => {
+    filter.addEventListener('click', function() {
+      const filterValue = this.getAttribute('data-filter');
+      
+      // Update active filter
+      filters.forEach(f => f.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Filter entries
+      entries.forEach(entry => {
+        if (filterValue === 'all') {
+          entry.classList.remove('hidden');
+        } else {
+          const entryTags = entry.getAttribute('data-tags').split(',');
+          if (entryTags.includes(filterValue)) {
+            entry.classList.remove('hidden');
+          } else {
+            entry.classList.add('hidden');
+          }
+        }
+      });
+    });
+  });
+});
+</script>
+</style>
+
+<script>
+// Professional Experience Filtering
+document.addEventListener('DOMContentLoaded', function() {
+  const filters = document.querySelectorAll('.experience-filter');
+  const entries = document.querySelectorAll('.experience-entry');
+  
+  filters.forEach(filter => {
+    filter.addEventListener('click', function() {
+      const filterValue = this.getAttribute('data-filter');
+      
+      // Update active filter
+      filters.forEach(f => f.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Filter entries
+      entries.forEach(entry => {
+        if (filterValue === 'all') {
+          entry.classList.remove('hidden');
+        } else {
+          const entryTags = entry.getAttribute('data-tags').split(',');
+          if (entryTags.includes(filterValue)) {
+            entry.classList.remove('hidden');
+          } else {
+            entry.classList.add('hidden');
+          }
+        }
+      });
+    });
+  });
+});
+</script>
