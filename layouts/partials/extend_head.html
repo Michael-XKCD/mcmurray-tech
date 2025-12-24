@@ -112,11 +112,10 @@
 }
 
 /* Experience filtering */
-.experience-filters {
+.experience-highlights {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
+  flex-direction: column;
+  gap: 16px;
   margin: 24px 0;
   padding: 16px;
   background: rgba(255, 255, 255, 0.03);
@@ -124,19 +123,26 @@
   border-radius: 12px;
 }
 
-/* Light mode styling for filters */
-.list:not(.dark) .experience-filters {
+/* Light mode styling for highlights */
+.list:not(.dark) .experience-highlights {
   background: rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.filter-label {
+.highlight-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.highlight-label {
   font-weight: 600;
   color: var(--content);
   margin-right: 8px;
 }
 
-.experience-filter {
+.experience-highlight {
   display: inline-block;
   padding: 6px 12px;
   background: rgba(255, 255, 255, 0.1);
@@ -150,13 +156,31 @@
   user-select: none;
 }
 
-.experience-filter:hover {
+/* Light mode styling for highlight buttons */
+.list:not(.dark) .experience-highlight {
+  background: rgba(0, 0, 0, 0.08);
+  border: 1.5px solid rgba(0, 0, 0, 0.25);
+}
+
+.experience-highlight:hover {
   background: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-1px);
 }
 
-.experience-filter.active {
+.list:not(.dark) .experience-highlight:hover {
+  background: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+.experience-highlight.active {
+  background: var(--purple-primary);
+  border-color: var(--purple-primary);
+  color: white;
+}
+
+/* Keep purple for active state in light mode */
+.list:not(.dark) .experience-highlight.active {
   background: var(--purple-primary);
   border-color: var(--purple-primary);
   color: white;
@@ -164,11 +188,26 @@
 
 .experience-entry {
   margin-bottom: 2rem;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   transition: all 0.3s ease;
+}
+
+.experience-entry h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+
+.experience-entry h3:first-child {
+  font-size: 1.5rem;
+}
+
+.experience-entry h3:nth-child(2) {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
 }
 
 /* Light mode styling for experience entries */
@@ -196,70 +235,100 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 12px 0 16px 0;
+  margin: 12px 0 12px 0;
+  align-items: center;
 }
 
-.exp-tag, .edu-tag {
+/* Visual separator between tag groups */
+.tag-separator {
+  flex-basis: 100%;
+  height: 0;
+  margin: 0;
+}
+
+.exp-tag {
   display: inline-block;
   padding: 4px 10px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--content);
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
-.exp-tag.security, .edu-tag.security {
+/* Light mode styling for tags */
+.list:not(.dark) .exp-tag,
+.list:not(.dark)  {
+  background: rgba(0, 0, 0, 0.08);
+  border: 1.5px solid rgba(0, 0, 0, 0.25);
+}
+
+/* Keep purple for highlighted tags in light mode */
+.list:not(.dark) .exp-tag.exp-tag-highlighted {
+  background: var(--purple-primary);
+  border-color: var(--purple-primary);
+  color: white;
+}
+
+.exp-tag.exp-tag-highlighted {
+  background: var(--purple-primary);
+  border-color: var(--purple-primary);
+  color: white;
+  font-weight: 600;
+}
+
+.exp-tag.security.security {
   border-color: rgba(239, 68, 68, 0.5);
   background: rgba(239, 68, 68, 0.1);
   color: #ef4444;
 }
 
-.exp-tag.cloud, .edu-tag.cloud {
+.exp-tag.cloud.cloud {
   border-color: rgba(59, 130, 246, 0.5);
   background: rgba(59, 130, 246, 0.1);
   color: #3b82f6;
 }
 
-.exp-tag.automation, .edu-tag.automation {
+.exp-tag.automation.automation {
   border-color: rgba(168, 85, 247, 0.5);
   background: rgba(168, 85, 247, 0.1);
   color: #a855f7;
 }
 
-.exp-tag.programming, .edu-tag.programming {
+.exp-tag.programming.programming {
   border-color: rgba(34, 197, 94, 0.5);
   background: rgba(34, 197, 94, 0.1);
   color: #22c55e;
 }
 
-.exp-tag.systems, .edu-tag.systems {
+.exp-tag.systems.systems {
   border-color: rgba(59, 130, 246, 0.5);
   background: rgba(59, 130, 246, 0.1);
   color: #3b82f6;
 }
 
-.exp-tag.tools, .edu-tag.tools {
+.exp-tag.tools.tools {
   border-color: rgba(245, 158, 11, 0.5);
   background: rgba(245, 158, 11, 0.1);
   color: #f59e0b;
 }
 
-.exp-tag.networking, .edu-tag.networking {
+.exp-tag.networking.networking {
   border-color: rgba(14, 165, 233, 0.5);
   background: rgba(14, 165, 233, 0.1);
   color: #0ea5e9;
 }
 
-.exp-tag.database, .edu-tag.database {
+.exp-tag.database.database {
   border-color: rgba(99, 102, 241, 0.5);
   background: rgba(99, 102, 241, 0.1);
   color: #6366f1;
 }
 
-.exp-tag.collaboration, .edu-tag.collaboration {
+.exp-tag.collaboration.collaboration {
   border-color: rgba(168, 85, 247, 0.5);
   background: rgba(168, 85, 247, 0.1);
   color: #a855f7;
@@ -268,11 +337,16 @@
 /* Education entries styling */
 .education-entry {
   margin-bottom: 2rem;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   transition: all 0.3s ease;
+}
+
+.education-entry h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
 }
 
 /* Light mode styling for education entries */
@@ -334,14 +408,23 @@
 }
 
 @media (max-width: 768px) {
-  .experience-filters {
-    gap: 8px;
+  .experience-highlights {
+    gap: 12px;
     padding: 12px;
   }
   
-  .experience-filter {
-    padding: 4px 8px;
+  .highlight-row {
+    gap: 6px;
+  }
+  
+  .highlight-label {
+    min-width: 100px;
     font-size: 12px;
+  }
+  
+  .experience-highlight {
+    padding: 4px 8px;
+    font-size: 11px;
   }
   
   .experience-entry, .education-entry {
@@ -352,7 +435,7 @@
     gap: 6px;
   }
   
-  .exp-tag, .edu-tag {
+  .exp-tag {
     padding: 3px 8px;
     font-size: 11px;
   }
@@ -377,66 +460,150 @@
 </style>
 
 <script>
-// Professional Experience Filtering
+// Professional Experience Multi-Filter System
 document.addEventListener('DOMContentLoaded', function() {
-  // Experience filtering
-  const filters = document.querySelectorAll('.experience-filter');
-  const entries = document.querySelectorAll('.experience-entry');
+  const highlights = document.querySelectorAll('.experience-highlight');
+  const entries = document.querySelectorAll('.experience-entry, .education-entry');
   
-  filters.forEach(filter => {
-    filter.addEventListener('click', function() {
-      const filterValue = this.getAttribute('data-filter');
-      
-      // Update active filter
-      filters.forEach(f => f.classList.remove('active'));
-      this.classList.add('active');
-      
-      // Filter entries
-      entries.forEach(entry => {
-        if (filterValue === 'all') {
-          entry.classList.remove('hidden');
-        } else {
-          const entryTags = entry.getAttribute('data-tags').split(',');
-          if (entryTags.includes(filterValue)) {
-            entry.classList.remove('hidden');
-          } else {
-            entry.classList.add('hidden');
-          }
-        }
-      });
+  // Track active highlights for each category - now arrays for multiple selections
+  const activeFilters = {
+    focus: [],
+    tech: [],
+    industry: []
+  };
+  
+  // Helper function to determine filter category
+  function getFilterCategory(filterValue) {
+    if (filterValue.startsWith('focus-')) {
+      return 'focus';
+    } else if (filterValue.startsWith('tech-')) {
+      return 'tech';
+    } else if (filterValue.startsWith('industry-')) {
+      return 'industry';
+    }
+    return null;
+  }
+  
+  // Check if filter is an "All" filter
+  function isAllFilter(filterValue) {
+    return filterValue === 'focus-all' || filterValue === 'tech-all' || filterValue === 'industry-all';
+  }
+  
+  // Apply highlighting to all entries
+  function applyFilters() {
+    entries.forEach(entry => {
+      // Highlight matching tags
+      highlightTags(entry);
     });
-  });
-});
-</script>
-</style>
-
-<script>
-// Professional Experience Filtering
-document.addEventListener('DOMContentLoaded', function() {
-  const filters = document.querySelectorAll('.experience-filter');
-  const entries = document.querySelectorAll('.experience-entry');
+  }
   
-  filters.forEach(filter => {
+  // Highlight tags that match active filters
+  function highlightTags(entry) {
+    const tags = entry.querySelectorAll('.exp-tag');
+    
+    tags.forEach(tag => {
+      // Remove existing highlight
+      tag.classList.remove('exp-tag-highlighted');
+      
+      // Get the tech, focus, and industry categories from data attributes
+      const techCategory = tag.getAttribute('data-tech');
+      const focusCategory = tag.getAttribute('data-focus');
+      const industryCategory = tag.getAttribute('data-industry');
+      
+      // Highlight if any tech filter matches
+      if (activeFilters.tech.length > 0 && techCategory) {
+        const hasMatchingTech = activeFilters.tech.some(techFilter => {
+          const activeTech = techFilter.replace('tech-', '');
+          return techCategory === activeTech;
+        });
+        if (hasMatchingTech) {
+          tag.classList.add('exp-tag-highlighted');
+        }
+      }
+      
+      // Highlight if any focus filter matches
+      if (activeFilters.focus.length > 0 && focusCategory) {
+        const hasMatchingFocus = activeFilters.focus.some(focusFilter => {
+          const activeFocus = focusFilter.replace('focus-', '');
+          return focusCategory === activeFocus;
+        });
+        if (hasMatchingFocus) {
+          tag.classList.add('exp-tag-highlighted');
+        }
+      }
+      
+      // Highlight if any industry filter matches
+      if (activeFilters.industry.length > 0 && industryCategory) {
+        const hasMatchingIndustry = activeFilters.industry.some(industryFilter => {
+          const activeIndustry = industryFilter.replace('industry-', '');
+          return industryCategory === activeIndustry;
+        });
+        if (hasMatchingIndustry) {
+          tag.classList.add('exp-tag-highlighted');
+        }
+      }
+    });
+  }
+  
+  // Set up filter click handlers
+  highlights.forEach(filter => {
     filter.addEventListener('click', function() {
       const filterValue = this.getAttribute('data-filter');
+      const category = getFilterCategory(filterValue);
       
-      // Update active filter
-      filters.forEach(f => f.classList.remove('active'));
-      this.classList.add('active');
+      if (!category) return;
       
-      // Filter entries
-      entries.forEach(entry => {
-        if (filterValue === 'all') {
-          entry.classList.remove('hidden');
-        } else {
-          const entryTags = entry.getAttribute('data-tags').split(',');
-          if (entryTags.includes(filterValue)) {
-            entry.classList.remove('hidden');
-          } else {
-            entry.classList.add('hidden');
+      // Handle "All" filter - clear all highlights in this category
+      if (isAllFilter(filterValue)) {
+        activeFilters[category] = [];
+        
+        // Remove active class from all highlights in this category
+        highlights.forEach(f => {
+          const fValue = f.getAttribute('data-filter');
+          const fCategory = getFilterCategory(fValue);
+          if (fCategory === category) {
+            f.classList.remove('active');
           }
+        });
+        
+        // Add active class to "All" filter
+        this.classList.add('active');
+      } else {
+        // Remove active class from "All" filter in this category
+        highlights.forEach(f => {
+          const fValue = f.getAttribute('data-filter');
+          const fCategory = getFilterCategory(fValue);
+          if (fCategory === category && isAllFilter(fValue)) {
+            f.classList.remove('active');
+          }
+        });
+        
+        // Toggle this filter
+        const filterIndex = activeFilters[category].indexOf(filterValue);
+        if (filterIndex > -1) {
+          // Filter is active, remove it
+          activeFilters[category].splice(filterIndex, 1);
+          this.classList.remove('active');
+          
+          // If no highlights active, activate "All"
+          if (activeFilters[category].length === 0) {
+            highlights.forEach(f => {
+              const fValue = f.getAttribute('data-filter');
+              const fCategory = getFilterCategory(fValue);
+              if (fCategory === category && isAllFilter(fValue)) {
+                f.classList.add('active');
+              }
+            });
+          }
+        } else {
+          // Filter is not active, add it
+          activeFilters[category].push(filterValue);
+          this.classList.add('active');
         }
-      });
+      }
+      
+      // Apply all filters
+      applyFilters();
     });
   });
 });
