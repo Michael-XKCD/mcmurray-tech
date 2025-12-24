@@ -94,6 +94,23 @@
 }
 
 /* Minimal section separators */
+.post-content h1 {
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+}
+
+.post-content h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 1px;
+    background: var(--purple-primary);
+}
+
 .post-content h2 {
     position: relative;
     padding-bottom: 0.5rem;
@@ -117,10 +134,20 @@
   flex-direction: column;
   gap: 16px;
   margin: 24px 0;
-  padding: 16px;
+  padding: 16px 20px 20px 20px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
+}
+
+.experience-highlights h3 {
+  margin: 6px 0 6px 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+.experience-highlights h3::after {
+  display: none !important;
 }
 
 /* Light mode styling for highlights */
@@ -139,7 +166,7 @@
 .highlight-label {
   font-weight: 600;
   color: var(--content);
-  margin-right: 8px;
+  margin-right: 1px;
 }
 
 .experience-highlight {
@@ -200,11 +227,11 @@
   margin-bottom: 0.4rem;
 }
 
-.experience-entry h3:first-child {
+.experience-entry h3:first-of-type {
   font-size: 1.5rem;
 }
 
-.experience-entry h3:nth-child(2) {
+.experience-entry h3:nth-of-type(2) {
   font-size: 1.15rem;
   font-weight: 500;
   margin-bottom: 1.25rem;
@@ -235,7 +262,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 12px 0 12px 0;
+  margin: 12px 0 28px 0;
   align-items: center;
 }
 
@@ -349,11 +376,11 @@
   margin-bottom: 0.4rem;
 }
 
-.education-entry h3:first-child {
+.education-entry h3:first-of-type {
   font-size: 1.5rem;
 }
 
-.education-entry h3:nth-child(2) {
+.education-entry h3:nth-of-type(2) {
   font-size: 1.15rem;
   font-weight: 500;
   margin-bottom: 1.25rem;
@@ -499,11 +526,66 @@ document.addEventListener('DOMContentLoaded', function() {
     return filterValue === 'focus-all' || filterValue === 'tech-all' || filterValue === 'industry-all';
   }
   
-  // Apply highlighting to all entries
+  // Apply filtering and highlighting to all entries
   function applyFilters() {
+    // If all filters are empty (all "All" selected), show everything
+    const hasActiveFilters = activeFilters.focus.length > 0 || activeFilters.tech.length > 0 || activeFilters.industry.length > 0;
+    
+    if (!hasActiveFilters) {
+      entries.forEach(entry => {
+        entry.classList.remove('hidden');
+        // Remove all tag highlights
+        const tags = entry.querySelectorAll('.exp-tag');
+        tags.forEach(tag => tag.classList.remove('exp-tag-highlighted'));
+      });
+      return;
+    }
+    
     entries.forEach(entry => {
-      // Highlight matching tags
-      highlightTags(entry);
+      const entryTags = entry.getAttribute('data-tags');
+      if (!entryTags) {
+        entry.classList.add('hidden');
+        return;
+      }
+      
+      const tagsList = entryTags.split(',').map(t => t.trim());
+      let shouldShow = true;
+      
+      // Check focus filters
+      if (activeFilters.focus.length > 0) {
+        const hasMatchingFocus = activeFilters.focus.some(focusFilter => {
+          const activeFocus = focusFilter.replace('focus-', '');
+          return tagsList.includes(activeFocus);
+        });
+        shouldShow = shouldShow && hasMatchingFocus;
+      }
+      
+      // Check tech filters
+      if (activeFilters.tech.length > 0) {
+        const hasMatchingTech = activeFilters.tech.some(techFilter => {
+          const activeTech = techFilter.replace('tech-', '');
+          return tagsList.includes(activeTech);
+        });
+        shouldShow = shouldShow && hasMatchingTech;
+      }
+      
+      // Check industry filters
+      if (activeFilters.industry.length > 0) {
+        const hasMatchingIndustry = activeFilters.industry.some(industryFilter => {
+          const activeIndustry = industryFilter.replace('industry-', '');
+          return tagsList.includes(activeIndustry);
+        });
+        shouldShow = shouldShow && hasMatchingIndustry;
+      }
+      
+      // Show or hide the entry
+      if (shouldShow) {
+        entry.classList.remove('hidden');
+        // Highlight matching tags
+        highlightTags(entry);
+      } else {
+        entry.classList.add('hidden');
+      }
     });
   }
   
