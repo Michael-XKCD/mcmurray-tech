@@ -1,0 +1,7 @@
+public/
+.git/
+.gitignore
+.DS_Store
+*.md
+!content/**/*.md
+node_modules/
