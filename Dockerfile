@@ -3,17 +3,8 @@ FROM hugomods/hugo:exts-0.149.1 AS builder
 
 WORKDIR /src
 
-# Install git for theme cloning
-RUN apk add --no-cache git
-
-# Copy the entire site
+# Copy the entire site (including theme submodule)
 COPY . .
-
-# Clone PaperMod theme if not already present
-RUN if [ ! -d "themes/PaperMod/.git" ]; then \
-      rm -rf themes/PaperMod && \
-      git clone https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod; \
-    fi
 
 # Build the site
 RUN hugo --minify --environment production
