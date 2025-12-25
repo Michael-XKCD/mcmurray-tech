@@ -266,13 +266,6 @@
   align-items: center;
 }
 
-/* Visual separator between tag groups */
-.tag-separator {
-  flex-basis: 100%;
-  height: 0;
-  margin: 0;
-}
-
 .exp-tag {
   display: inline-block;
   padding: 4px 10px;
@@ -287,8 +280,7 @@
 }
 
 /* Light mode styling for tags */
-.list:not(.dark) .exp-tag,
-.list:not(.dark)  {
+.list:not(.dark) .exp-tag {
   background: rgba(0, 0, 0, 0.08);
   border: 1.5px solid rgba(0, 0, 0, 0.25);
 }
@@ -526,14 +518,13 @@ document.addEventListener('DOMContentLoaded', function() {
     return filterValue === 'focus-all' || filterValue === 'tech-all' || filterValue === 'industry-all';
   }
   
-  // Apply filtering and highlighting to all entries
+  // Apply highlighting to all entries (no filtering/hiding)
   function applyFilters() {
-    // If all filters are empty (all "All" selected), show everything
+    // If all filters are empty (all "All" selected), remove all highlights
     const hasActiveFilters = activeFilters.focus.length > 0 || activeFilters.tech.length > 0 || activeFilters.industry.length > 0;
     
     if (!hasActiveFilters) {
       entries.forEach(entry => {
-        entry.classList.remove('hidden');
         // Remove all tag highlights
         const tags = entry.querySelectorAll('.exp-tag');
         tags.forEach(tag => tag.classList.remove('exp-tag-highlighted'));
@@ -541,51 +532,9 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
     
+    // Highlight matching tags in all entries (without hiding any)
     entries.forEach(entry => {
-      const entryTags = entry.getAttribute('data-tags');
-      if (!entryTags) {
-        entry.classList.add('hidden');
-        return;
-      }
-      
-      const tagsList = entryTags.split(',').map(t => t.trim());
-      let shouldShow = true;
-      
-      // Check focus filters
-      if (activeFilters.focus.length > 0) {
-        const hasMatchingFocus = activeFilters.focus.some(focusFilter => {
-          const activeFocus = focusFilter.replace('focus-', '');
-          return tagsList.includes(activeFocus);
-        });
-        shouldShow = shouldShow && hasMatchingFocus;
-      }
-      
-      // Check tech filters
-      if (activeFilters.tech.length > 0) {
-        const hasMatchingTech = activeFilters.tech.some(techFilter => {
-          const activeTech = techFilter.replace('tech-', '');
-          return tagsList.includes(activeTech);
-        });
-        shouldShow = shouldShow && hasMatchingTech;
-      }
-      
-      // Check industry filters
-      if (activeFilters.industry.length > 0) {
-        const hasMatchingIndustry = activeFilters.industry.some(industryFilter => {
-          const activeIndustry = industryFilter.replace('industry-', '');
-          return tagsList.includes(activeIndustry);
-        });
-        shouldShow = shouldShow && hasMatchingIndustry;
-      }
-      
-      // Show or hide the entry
-      if (shouldShow) {
-        entry.classList.remove('hidden');
-        // Highlight matching tags
-        highlightTags(entry);
-      } else {
-        entry.classList.add('hidden');
-      }
+      highlightTags(entry);
     });
   }
   
