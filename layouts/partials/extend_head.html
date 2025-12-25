@@ -604,9 +604,11 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Highlight if any tech filter matches
       if (activeFilters.tech.length > 0 && techCategory) {
+        // Split space-separated tech categories
+        const techCategories = techCategory.split(' ').map(t => t.trim());
         const hasMatchingTech = activeFilters.tech.some(techFilter => {
           const activeTech = techFilter.replace('tech-', '');
-          return techCategory === activeTech;
+          return techCategories.includes(activeTech);
         });
         if (hasMatchingTech) {
           tag.classList.add('exp-tag-highlighted');
