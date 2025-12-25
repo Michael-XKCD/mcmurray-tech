@@ -200,14 +200,88 @@
   border-color: rgba(0, 0, 0, 0.35);
 }
 
-.experience-highlight.active {
+/* Industry filter selectors - Lighter grey (matches industry tags) */
+.experience-highlight[data-filter^="industry-"]:not([data-filter="industry-all"]) {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Focus filter selectors - Medium grey (matches focus tags) */
+.experience-highlight[data-filter^="focus-"]:not([data-filter="focus-all"]) {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+/* Tech filter selectors - Darker grey (matches tech tags) */
+.experience-highlight[data-filter^="tech-"]:not([data-filter="tech-all"]) {
+  background: rgba(255, 255, 255, 0.20);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
+/* Light mode - Industry filter selectors */
+.list:not(.dark) .experience-highlight[data-filter^="industry-"]:not([data-filter="industry-all"]) {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+/* Light mode - Focus filter selectors */
+.list:not(.dark) .experience-highlight[data-filter^="focus-"]:not([data-filter="focus-all"]) {
+  background: rgba(0, 0, 0, 0.10);
+  border-color: rgba(0, 0, 0, 0.28);
+}
+
+/* Light mode - Tech filter selectors */
+.list:not(.dark) .experience-highlight[data-filter^="tech-"]:not([data-filter="tech-all"]) {
+  background: rgba(0, 0, 0, 0.18);
+  border-color: rgba(0, 0, 0, 0.42);
+}
+
+/* "All" filters - only border highlight when active */
+.experience-highlight[data-filter$="-all"].active {
+  border-color: var(--purple-primary);
+  border-width: 2px;
+  color: var(--content);
+}
+
+.list:not(.dark) .experience-highlight[data-filter$="-all"].active {
+  border-color: var(--purple-primary);
+  border-width: 2px;
+  color: var(--content);
+}
+
+/* Active state - purple with matching intensity */
+.experience-highlight[data-filter^="industry-"].active:not([data-filter="industry-all"]) {
+  background: rgba(75, 65, 200, 1);
+  border-color: rgba(75, 65, 200, 1);
+  color: white;
+}
+
+.experience-highlight[data-filter^="focus-"].active:not([data-filter="focus-all"]) {
+  background: rgba(112, 102, 255, 0.60);
+  border-color: rgba(112, 102, 255, 0.70);
+  color: white;
+}
+
+.experience-highlight[data-filter^="tech-"].active:not([data-filter="tech-all"]) {
   background: var(--purple-primary);
   border-color: var(--purple-primary);
   color: white;
 }
 
-/* Keep purple for active state in light mode */
-.list:not(.dark) .experience-highlight.active {
+/* Light mode active states */
+.list:not(.dark) .experience-highlight[data-filter^="industry-"].active:not([data-filter="industry-all"]) {
+  background: rgba(75, 65, 200, 1);
+  border-color: rgba(75, 65, 200, 1);
+  color: white;
+}
+
+.list:not(.dark) .experience-highlight[data-filter^="focus-"].active:not([data-filter="focus-all"]) {
+  background: rgba(112, 102, 255, 0.60);
+  border-color: rgba(112, 102, 255, 0.70);
+  color: white;
+}
+
+.list:not(.dark) .experience-highlight[data-filter^="tech-"].active:not([data-filter="tech-all"]) {
   background: var(--purple-primary);
   border-color: var(--purple-primary);
   color: white;
@@ -279,24 +353,86 @@
   flex-shrink: 0;
 }
 
+/* Industry tags - Lighter grey */
+.exp-tag[data-industry] {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Focus tags - Medium grey */
+.exp-tag[data-focus]:not([data-tech]) {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+/* Tech tags - Darker grey */
+.exp-tag[data-tech] {
+  background: rgba(255, 255, 255, 0.20);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
 /* Light mode styling for tags */
 .list:not(.dark) .exp-tag {
   background: rgba(0, 0, 0, 0.08);
   border: 1.5px solid rgba(0, 0, 0, 0.25);
 }
 
-/* Keep purple for highlighted tags in light mode */
-.list:not(.dark) .exp-tag.exp-tag-highlighted {
-  background: var(--purple-primary);
-  border-color: var(--purple-primary);
-  color: white;
+/* Light mode - Industry tags (Lighter grey) */
+.list:not(.dark) .exp-tag[data-industry] {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.18);
 }
 
+/* Light mode - Focus tags (Medium grey) */
+.list:not(.dark) .exp-tag[data-focus]:not([data-tech]) {
+  background: rgba(0, 0, 0, 0.10);
+  border-color: rgba(0, 0, 0, 0.28);
+}
+
+/* Light mode - Tech tags (Darker grey) */
+.list:not(.dark) .exp-tag[data-tech] {
+  background: rgba(0, 0, 0, 0.18);
+  border-color: rgba(0, 0, 0, 0.42);
+}
+
+/* Highlighted tags - varying purple intensity based on shade */
 .exp-tag.exp-tag-highlighted {
-  background: var(--purple-primary);
-  border-color: var(--purple-primary);
   color: white;
   font-weight: 600;
+}
+
+/* Industry tags highlighted - Darkest purple (was Tech) */
+.exp-tag[data-industry].exp-tag-highlighted {
+  background: rgba(75, 65, 200, 1);
+  border-color: rgba(75, 65, 200, 1);
+}
+
+/* Focus tags highlighted - Lightest purple (was Industry) */
+.exp-tag[data-focus]:not([data-tech]).exp-tag-highlighted {
+  background: rgba(112, 102, 255, 0.60);
+  border-color: rgba(112, 102, 255, 0.70);
+}
+
+/* Tech tags highlighted - Medium purple (was Focus) */
+.exp-tag[data-tech].exp-tag-highlighted {
+  background: var(--purple-primary);
+  border-color: var(--purple-primary);
+}
+
+/* Light mode - same purple variations */
+.list:not(.dark) .exp-tag[data-industry].exp-tag-highlighted {
+  background: rgba(75, 65, 200, 1);
+  border-color: rgba(75, 65, 200, 1);
+}
+
+.list:not(.dark) .exp-tag[data-focus]:not([data-tech]).exp-tag-highlighted {
+  background: rgba(112, 102, 255, 0.60);
+  border-color: rgba(112, 102, 255, 0.70);
+}
+
+.list:not(.dark) .exp-tag[data-tech].exp-tag-highlighted {
+  background: var(--purple-primary);
+  border-color: var(--purple-primary);
 }
 
 .exp-tag.security.security {
