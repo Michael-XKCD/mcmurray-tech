@@ -79,12 +79,12 @@
 
 @media (max-width: 768px) {
     .profile-image {
-        width: 250px !important;
-        height: 250px !important;
-        min-width: 250px;
-        min-height: 250px;
-        max-width: 250px;
-        max-height: 250px;
+        width: 275px !important;
+        height: 275px !important;
+        min-width: 275px;
+        min-height: 275px;
+        max-width: 275px;
+        max-height: 275px;
         clip-path: circle(50%) !important;
     }
     
@@ -93,13 +93,13 @@
     }
     
     .social-icon {
-        width: 48px;
-        height: 48px;
+        width: 54px;
+        height: 54px;
     }
     
     .social-icon svg {
-        width: 26px;
-        height: 26px;
+        width: 30px;
+        height: 30px;
     }
 }
 
