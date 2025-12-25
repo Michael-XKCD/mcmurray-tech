@@ -79,12 +79,12 @@
 
 @media (max-width: 768px) {
     .profile-image {
-        width: 150px !important;
-        height: 150px !important;
-        min-width: 150px;
-        min-height: 150px;
-        max-width: 150px;
-        max-height: 150px;
+        width: 200px !important;
+        height: 200px !important;
+        min-width: 200px;
+        min-height: 200px;
+        max-width: 200px;
+        max-height: 200px;
         clip-path: circle(50%) !important;
     }
     
@@ -691,13 +691,12 @@
   }
   
   .highlight-label {
-    min-width: 100px;
-    font-size: 12px;
+    font-size: 13px;
   }
   
   .experience-highlight {
-    padding: 4px 8px;
-    font-size: 11px;
+    padding: 6px 12px;
+    font-size: 13px;
   }
   
   .experience-entry, .education-entry {
