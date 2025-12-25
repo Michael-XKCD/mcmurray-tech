@@ -7,11 +7,9 @@ services:
       dockerfile: Dockerfile
     container_name: mcmurray-tech
     restart: unless-stopped
-    ports:
-      - "8080:80"
     networks:
-      - proxy
+      - proxynet
 
 networks:
-  proxy:
+  proxynet:
     external: true
