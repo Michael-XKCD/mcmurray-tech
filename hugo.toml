@@ -2,6 +2,7 @@ baseURL = 'https://mcmurray.tech/'
 languageCode = 'en-us'
 title = 'Michael McMurray'
 theme = 'PaperMod'
+copyright = 'Michael McMurray'
 
 [pagination]
   pagerSize = 10
