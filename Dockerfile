@@ -18,9 +18,6 @@ RUN if [ ! -d "themes/PaperMod/.git" ]; then \
 # Build the site
 RUN hugo --minify --environment production
 
-# Verify build output
-RUN ls -la /src/public/ && echo "\n=== CSS Files ===" && find /src/public -name "*.css" -type f
-
 # Production stage
 FROM nginx:alpine
 
