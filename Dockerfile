@@ -3,8 +3,14 @@ FROM hugomods/hugo:exts-0.149.1 AS builder
 
 WORKDIR /src
 
+# Install git for submodule support
+RUN apk add --no-cache git
+
 # Copy the entire site
 COPY . .
+
+# Initialize and update git submodules (PaperMod theme)
+RUN git submodule update --init --recursive
 
 # Build the site
 RUN hugo --minify --environment production
