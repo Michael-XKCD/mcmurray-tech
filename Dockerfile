@@ -1,5 +1,5 @@
 # Build stage
-FROM hugomods/hugo:exts-0.149.1 AS builder
+FROM hugomods/hugo:exts-0.153.2 AS builder
 
 WORKDIR /src
 
@@ -13,7 +13,7 @@ COPY . .
 RUN rm -rf themes/PaperMod && \
     git clone https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod && \
     cd themes/PaperMod && \
-    git checkout 6e10faefc871d8ff3c96136f6b287ac7984bf40d
+    git checkout 7d061d56d4664bd9c8241eb904994c98b928f0c8
 
 # Build the site
 RUN hugo --minify --environment production
