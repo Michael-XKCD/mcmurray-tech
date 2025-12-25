@@ -79,12 +79,12 @@
 
 @media (max-width: 768px) {
     .profile-image {
-        width: 200px !important;
-        height: 200px !important;
-        min-width: 200px;
-        min-height: 200px;
-        max-width: 200px;
-        max-height: 200px;
+        width: 250px !important;
+        height: 250px !important;
+        min-width: 250px;
+        min-height: 250px;
+        max-width: 250px;
+        max-height: 250px;
         clip-path: circle(50%) !important;
     }
     
@@ -93,13 +93,13 @@
     }
     
     .social-icon {
-        width: 36px;
-        height: 36px;
+        width: 48px;
+        height: 48px;
     }
     
     .social-icon svg {
-        width: 20px;
-        height: 20px;
+        width: 26px;
+        height: 26px;
     }
 }
 
@@ -691,12 +691,12 @@
   }
   
   .highlight-label {
-    font-size: 13px;
+    font-size: 14px;
   }
   
   .experience-highlight {
-    padding: 6px 12px;
-    font-size: 13px;
+    padding: 8px 14px;
+    font-size: 14px;
   }
   
   .experience-entry, .education-entry {
