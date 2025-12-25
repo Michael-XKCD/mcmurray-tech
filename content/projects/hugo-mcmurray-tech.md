@@ -1,7 +1,7 @@
 ---
 title: "Hugo-Powered Static Site – Self-Hosted Static Site for Resume and Homelab Work"
 date: 2025-12-01T09:00:00-07:00
-draft: true
+draft: false
 tags: ["hugo", "docker", "static-site", "self-hosted", "portfolio", "homelab"]
 categories: ["projects", "web"]
 description: "Self-hosted static portfolio and technical blog built with Hugo and the PaperMod theme, replacing a traditional WordPress stack with a faster, simpler, and more maintainable platform."

@@ -41,12 +41,13 @@ theme = 'PaperMod'
   defaultTheme = 'dark'
   primaryColor = '#7066ff'
 
-  # Favicon configuration
+# Favicon configuration
   [params.assets]
     favicon = "/images/logo.png"
     favicon16x16 = "/images/logo.png"
     favicon32x32 = "/images/logo.png"
     apple_touch_icon = "/images/logo.png"
+    disableFingerprinting = false
 
   # social icons (PaperMod reads this under 'socialIcons')
   [[params.socialIcons]]
