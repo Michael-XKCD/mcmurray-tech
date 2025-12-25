@@ -134,7 +134,7 @@
 }
 
 /* Light mode styling for achievement icons */
-.list:not(.dark) .achievement-icon {
+:root:not([data-theme="dark"]) .list .achievement-icon {
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -156,7 +156,7 @@
 }
 
 /* Light mode filter for achievement icons */
-.list:not(.dark) .achievement-icon img {
+:root:not([data-theme="dark"]) .list .achievement-icon img {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
 }
 
@@ -300,7 +300,7 @@
 }
 
 /* Light mode styling for highlights */
-.list:not(.dark) .experience-highlights {
+:root:not([data-theme="dark"]) .list .experience-highlights {
   background: rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -333,7 +333,7 @@
 }
 
 /* Light mode styling for highlight buttons */
-.list:not(.dark) .experience-highlight {
+:root:not([data-theme="dark"]) .list .experience-highlight {
   background: rgba(0, 0, 0, 0.08);
   border: 1.5px solid rgba(0, 0, 0, 0.25);
 }
@@ -344,7 +344,7 @@
   transform: translateY(-1px);
 }
 
-.list:not(.dark) .experience-highlight:hover {
+:root:not([data-theme="dark"]) .list .experience-highlight:hover {
   background: rgba(0, 0, 0, 0.12);
   border-color: rgba(0, 0, 0, 0.35);
 }
@@ -368,19 +368,19 @@
 }
 
 /* Light mode - Industry filter selectors */
-.list:not(.dark) .experience-highlight[data-filter^="industry-"]:not([data-filter="industry-all"]) {
+:root:not([data-theme="dark"]) .list .experience-highlight[data-filter^="industry-"]:not([data-filter="industry-all"]) {
   background: rgba(0, 0, 0, 0.04);
   border-color: rgba(0, 0, 0, 0.18);
 }
 
 /* Light mode - Focus filter selectors */
-.list:not(.dark) .experience-highlight[data-filter^="focus-"]:not([data-filter="focus-all"]) {
+:root:not([data-theme="dark"]) .list .experience-highlight[data-filter^="focus-"]:not([data-filter="focus-all"]) {
   background: rgba(0, 0, 0, 0.10);
   border-color: rgba(0, 0, 0, 0.28);
 }
 
 /* Light mode - Tech filter selectors */
-.list:not(.dark) .experience-highlight[data-filter^="tech-"]:not([data-filter="tech-all"]) {
+:root:not([data-theme="dark"]) .list .experience-highlight[data-filter^="tech-"]:not([data-filter="tech-all"]) {
   background: rgba(0, 0, 0, 0.18);
   border-color: rgba(0, 0, 0, 0.42);
 }
@@ -392,7 +392,7 @@
   color: var(--content);
 }
 
-.list:not(.dark) .experience-highlight[data-filter$="-all"].active {
+:root:not([data-theme="dark"]) .list .experience-highlight[data-filter$="-all"].active {
   border-color: var(--purple-primary);
   border-width: 2px;
   color: var(--content);
@@ -418,19 +418,19 @@
 }
 
 /* Light mode active states */
-.list:not(.dark) .experience-highlight[data-filter^="industry-"].active:not([data-filter="industry-all"]) {
+:root:not([data-theme="dark"]) .list .experience-highlight[data-filter^="industry-"].active:not([data-filter="industry-all"]) {
   background: rgba(75, 65, 200, 1);
   border-color: rgba(75, 65, 200, 1);
   color: white;
 }
 
-.list:not(.dark) .experience-highlight[data-filter^="focus-"].active:not([data-filter="focus-all"]) {
+:root:not([data-theme="dark"]) .list .experience-highlight[data-filter^="focus-"].active:not([data-filter="focus-all"]) {
   background: rgba(112, 102, 255, 0.60);
   border-color: rgba(112, 102, 255, 0.70);
   color: white;
 }
 
-.list:not(.dark) .experience-highlight[data-filter^="tech-"].active:not([data-filter="tech-all"]) {
+:root:not([data-theme="dark"]) .list .experience-highlight[data-filter^="tech-"].active:not([data-filter="tech-all"]) {
   background: var(--purple-primary);
   border-color: var(--purple-primary);
   color: white;
@@ -461,7 +461,7 @@
 }
 
 /* Light mode styling for experience entries */
-.list:not(.dark) .experience-entry {
+:root:not([data-theme="dark"]) .list .experience-entry {
   background: rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -476,7 +476,7 @@
 }
 
 /* Light mode hover styling */
-.list:not(.dark) .experience-entry:hover {
+:root:not([data-theme="dark"]) .list .experience-entry:hover {
   background: rgba(0, 0, 0, 0.05);
   border-color: rgba(0, 0, 0, 0.15);
 }
@@ -521,25 +521,25 @@
 }
 
 /* Light mode styling for tags */
-.list:not(.dark) .exp-tag {
+:root:not([data-theme="dark"]) .list .exp-tag {
   background: rgba(0, 0, 0, 0.08);
   border: 1.5px solid rgba(0, 0, 0, 0.25);
 }
 
 /* Light mode - Industry tags (Lighter grey) */
-.list:not(.dark) .exp-tag[data-industry] {
+:root:not([data-theme="dark"]) .list .exp-tag[data-industry] {
   background: rgba(0, 0, 0, 0.04);
   border-color: rgba(0, 0, 0, 0.18);
 }
 
 /* Light mode - Focus tags (Medium grey) */
-.list:not(.dark) .exp-tag[data-focus]:not([data-tech]) {
+:root:not([data-theme="dark"]) .list .exp-tag[data-focus]:not([data-tech]) {
   background: rgba(0, 0, 0, 0.10);
   border-color: rgba(0, 0, 0, 0.28);
 }
 
 /* Light mode - Tech tags (Darker grey) */
-.list:not(.dark) .exp-tag[data-tech] {
+:root:not([data-theme="dark"]) .list .exp-tag[data-tech] {
   background: rgba(0, 0, 0, 0.18);
   border-color: rgba(0, 0, 0, 0.42);
 }
@@ -569,17 +569,17 @@
 }
 
 /* Light mode - same purple variations */
-.list:not(.dark) .exp-tag[data-industry].exp-tag-highlighted {
+:root:not([data-theme="dark"]) .list .exp-tag[data-industry].exp-tag-highlighted {
   background: rgba(75, 65, 200, 1);
   border-color: rgba(75, 65, 200, 1);
 }
 
-.list:not(.dark) .exp-tag[data-focus]:not([data-tech]).exp-tag-highlighted {
+:root:not([data-theme="dark"]) .list .exp-tag[data-focus]:not([data-tech]).exp-tag-highlighted {
   background: rgba(112, 102, 255, 0.60);
   border-color: rgba(112, 102, 255, 0.70);
 }
 
-.list:not(.dark) .exp-tag[data-tech].exp-tag-highlighted {
+:root:not([data-theme="dark"]) .list .exp-tag[data-tech].exp-tag-highlighted {
   background: var(--purple-primary);
   border-color: var(--purple-primary);
 }
@@ -664,7 +664,7 @@
 }
 
 /* Light mode styling for education entries */
-.list:not(.dark) .education-entry {
+:root:not([data-theme="dark"]) .list .education-entry {
   background: rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -675,7 +675,7 @@
 }
 
 /* Light mode hover styling */
-.list:not(.dark) .education-entry:hover {
+:root:not([data-theme="dark"]) .list .education-entry:hover {
   background: rgba(0, 0, 0, 0.05);
   border-color: rgba(0, 0, 0, 0.15);
 }
