@@ -28,7 +28,7 @@ Beyond engineering solutions, I'm known for my ability to lead through influence
 
 <div class="experience-highlights">
 
-### Filter Experience & Education
+### Highlight Experience & Education
 
   <!-- Industry -->
   <div class="highlight-row">
