@@ -385,6 +385,38 @@
   border-color: rgba(0, 0, 0, 0.42);
 }
 
+/* "All" buttons - match their type backgrounds */
+.experience-highlight[data-filter="industry-all"] {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.experience-highlight[data-filter="focus-all"] {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.experience-highlight[data-filter="tech-all"] {
+  background: rgba(255, 255, 255, 0.20);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
+/* Light mode - "All" buttons */
+:root:not([data-theme="dark"]) .list .experience-highlight[data-filter="industry-all"] {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+:root:not([data-theme="dark"]) .list .experience-highlight[data-filter="focus-all"] {
+  background: rgba(0, 0, 0, 0.10);
+  border-color: rgba(0, 0, 0, 0.28);
+}
+
+:root:not([data-theme="dark"]) .list .experience-highlight[data-filter="tech-all"] {
+  background: rgba(0, 0, 0, 0.18);
+  border-color: rgba(0, 0, 0, 0.42);
+}
+
 /* "All" filters - only border highlight when active */
 .experience-highlight[data-filter$="-all"].active {
   border-color: var(--purple-primary);
