@@ -500,12 +500,12 @@ Visible tags should show SPECIFIC technologies/platforms/tools with data-tech an
 <h3>B.S. in Computer and Information Systems Security</h3>
 <h3>Western Washington University (2016 - 2020)</h3>
 <ul>
-<li>Facilitated campus wide cybersecurity talks</li>
-<li>Created vulnerability exploitation exercises</li>
-<li>Honed penetration testing skills in WWU's cyber range</li>
-<li>Gained hands-on experience with Wireshark and the ELK stack</li>
 <li>Participated in the Washington state Public Infrastructure Security Cyber Education System (PISCES) project; providing SIEM monitoring for government networks</li>
-<li>Studied abroad in Thailand as exchange student, developing my own ethics, communication and adaptability</li>
+<li>Facilitated campus-wide cybersecurity talks to raise awareness and promote safe digital practices</li>
+<li>Designed and created vulnerability exploitation exercises that serve future students</li>
+<li>Honed penetration testing skills in WWU’s cyber range</li>
+<li>Gained hands-on experience with Wireshark and the ELK stack</li>
+<li>Studied abroad in Thailand as an exchange student, developing my own ethics, cultural awareness, and adaptability</li>
 </ul>
 </div>
 
@@ -521,10 +521,10 @@ Visible tags should show SPECIFIC technologies/platforms/tools with data-tech an
 <h3>AAS-T in Cybersecurity and Computer Forensics</h3>
 <h3>Peninsula College (2014 - 2016)</h3>
 <ul>
-<li>Achieved honor roll status both years of study</li>
-<li>Served as President of Cyber Security Club, organizing events promoting privacy and safety</li>
-<li>Member of high school FIRST Robotics club as Lead Designer</li>
-<li>Studied abroad in Japan as an exchange student, helping shape my global perspective</li>
+<li>Achieved honor roll status throughout both years of study</li>
+<li>Served as President of the Cyber Security Club, organizing events focused on privacy, safety, and security awareness</li>
+<li>Participated in the FIRST Robotics program as Lead Designer, contributing to collaborative engineering and design efforts</li>
+<li>Studied abroad in Japan as an exchange student, developing a global perspective and cross-cultural communication skills</li>
 </ul>
 </div>
 
@@ -544,24 +544,24 @@ Visible tags should show SPECIFIC technologies/platforms/tools with data-tech an
 
 <div class="achievement-item">
 <div class="achievement-icon">
-<img src="/images/achievements/first-robotics.png" alt="FIRST Robotics" />
+<img src="/images/achievements/prccdc.png" alt="PRCCDC" />
 </div>
 <div class="achievement-content">
-<h3>FIRST Robotics - Industrial Design Award Winner</h3>
-<p>As Lead Designer for my high school robotics team, I contributed to innovative mechanical solutions and collaborative engineering processes.</p>
+<h3>Pacific Rim Collegiate Cyber Defense Competition (PRCCDC)</h3>
+<ul>
+<li><strong>Second Place</strong> - Western Washington University</li>
+<li><strong>Fourth Place</strong> - Peninsula College</li>
+</ul>
 </div>
 </div>
 
 <div class="achievement-item">
 <div class="achievement-icon">
-<img src="/images/achievements/prccdc.png" alt="PRCCDC" />
+<img src="/images/achievements/first-robotics.png" alt="FIRST Robotics" />
 </div>
 <div class="achievement-content">
-<h3>Cybersecurity Competition Success</h3>
-<ul>
-<li><strong>Second Place</strong> - Pacific Rim Collegiate Cyber Defense Competition (WWU)</li>
-<li><strong>Fourth Place</strong> - Pacific Rim Collegiate Cyber Defense Competition (Peninsula College)</li>
-</ul>
+<h3>Industrial Design Award</h3>
+<p>As the lead designer on my high school's FIRST Robotics team, I contributed to award-winning mechanical designs that balanced form, function, and aesthetics, earning the FIRST Robotics Industrial Design Award.</p>
 </div>
 </div>
 
