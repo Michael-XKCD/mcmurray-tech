@@ -268,7 +268,7 @@ Visible tags should show SPECIFIC technologies/platforms/tools with data-tech an
 <h3>Lumencor, Inc. (2022 - 2023)</h3>
 <p>Now a Application Developer, I focused on building secure, identity-integrated and automated application workflows while working closely with stakeholders to streamline manufacturing.</p>
 <ul>
-<li>I led projects expanding the capabilities of our in-house FileMaker app to support manufacturing and business objectives</li>
+<li>Led projects expanding the capabilities of our in-house FileMaker app to support manufacturing and business objectives</li>
 <li>Integrated FileMaker with Entra and Exchange via APIs to enable identity-aware automation and secure system-to-system communication</li>
 <li>Built and maintained automation responsible for sending thousands of transactional emails daily, improving reliability and reducing manual effort</li>
 <li>Partnered with stakeholders across manufacturing and operations to automate time-intensive processes, including purchase requests and assembly instruction revisioning</li>
