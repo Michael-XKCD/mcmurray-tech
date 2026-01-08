@@ -162,7 +162,7 @@ Visible tags should show SPECIFIC technologies/platforms/tools with data-tech an
 <li>Negotiated a vendor partnership worth over $1M to approximately $250K</li>
 <li>Architected and rolled out AWS Secrets Manager integrations for development pipelines, improving secret handling and reducing credential exposure</li>
 <li>Supported secure large-scale data transfers involving multiple petabytes of VFX data using AWS and Signiant for new studio partnerships</li>
-<li>Authored and maintained a broad set of security and IT policies reviewed and approved by the C-suite, including IAM, AWS IAM, vendor remote access, change management, incident response, email security, MFA, and studio AI usage policies</li>
+<li>Authored and maintained a broad set of security and IT policies reviewed and approved by the C-suite, including IAM, vendor remote access, change management, incident response, email security, MFA, and studio AI usage policies</li>
 <li>Created a data sensitivity classification matrix and authored multiple data handling and governance policies to support risk-based decision making</li>
 <li>Architected a cross-platform solution to block the use of unapproved web-based AI tools</li>
 </ul>
