@@ -20,7 +20,7 @@ draft: false
 </div>
 </div>
 
-Hello world! I'm **Michael McMurray**, a Senior Cybersecurity Engineer and CISSP (*exam passed; certification pending*) with over a decade of experience in IT and cybersecurity, spanning all eight security domains and a wide range of industries.
+Hello world! I'm **Michael McMurray**, a Senior Security Engineer and CISSP (*exam passed; certification pending*) with over a decade of experience in IT and cybersecurity, spanning all eight security domains and a wide range of industries.
 
 My background includes leading security efforts in identity and access management (IAM), cloud security architecture, and enterprise risk management. I help organizations design and operate secure systems at scale.
 
@@ -156,7 +156,7 @@ Visible tags should show SPECIFIC technologies/platforms/tools with data-tech an
 <h3>LAIKA Studios (2025 - Present)</h3>
 <p>As a Senior Security Engineer, I lead security architecture and automation initiatives driving large-scale improvements in identity, detection, cloud security, and AI risk management across the studio.</p>
 <ul>
-<li>Designed and deployed a PKI using SecureW2 and SCEP to enable passwordless authentication on managed devices, saving the studio an estimated $200K annually through reduced login friction and password resets</li>
+<li>Designed and deployed a PKI using SecureW2 and SCEP to enable passwordless authentication on managed devices, saving the studio an estimated $400K annually through reduced login friction and password resets</li>
 <li>Introduced AI-powered phishing and spam mitigation capabilities, significantly improving email threat detection and user safety</li>
 <li>Re-architected the organization's SIEM strategy, leading the migration to Splunk</li>
 <li>Negotiated a vendor partnership worth over $1M to approximately $250K</li>
@@ -164,7 +164,7 @@ Visible tags should show SPECIFIC technologies/platforms/tools with data-tech an
 <li>Supported secure large-scale data transfers involving multiple petabytes of VFX data using AWS and Signiant for new studio partnerships</li>
 <li>Authored and maintained a broad set of security and IT policies reviewed and approved by the C-suite, including IAM, AWS IAM, vendor remote access, change management, incident response, email security, MFA, and studio AI usage policies</li>
 <li>Created a data sensitivity classification matrix and authored multiple data handling and governance policies to support risk-based decision making</li>
-<li>Architected a cross-platform solution to secure and manage Chrome, including the safe use of AI-enabled browser features</li>
+<li>Architected a cross-platform solution to block the use of unapproved web-based AI tools</li>
 </ul>
 </div>
 
