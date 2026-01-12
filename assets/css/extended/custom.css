@@ -155,6 +155,24 @@
   min-height: 50px;
 }
 
+/* CISSP badge - white background to match badge design */
+.achievement-icon.cissp-icon {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.achievement-icon.cissp-icon a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.achievement-icon.cissp-icon img {
+  filter: none;
+}
+
 /* Light mode filter for achievement icons */
 :root:not([data-theme="dark"]) .list .achievement-icon img {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));

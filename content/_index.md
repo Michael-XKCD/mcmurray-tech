@@ -533,6 +533,18 @@ Visible tags should show SPECIFIC technologies/platforms/tools with data-tech an
 <div class="achievements">
 
 <div class="achievement-item">
+<div class="achievement-icon cissp-icon">
+<a href="https://www.credly.com/badges/9c6c8ae9-f787-4f9b-b65e-aa9bca5f9cec" target="_blank" rel="noopener noreferrer">
+<img src="/images/achievements/cissp.png" alt="CISSP" />
+</a>
+</div>
+<div class="achievement-content">
+<h3>Certified Information Systems Security Professional (CISSP)</h3>
+<p>Achieved the globally recognized CISSP certification from ISC², demonstrating expertise across eight security domains including Security and Risk Management, Asset Security, Security Architecture, and Security Operations.</p>
+</div>
+</div>
+
+<div class="achievement-item">
 <div class="achievement-icon">
 <img src="/images/achievements/eagle-scout.png" alt="Eagle Scout" />
 </div>
