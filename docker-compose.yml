@@ -1,10 +1,6 @@
-version: '3.8'
-
 services:
   hugo-site:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/michael-xkcd/mcmurray-tech:${MCMURRAY_TECH_IMAGE_TAG:-v0.1.1}
     container_name: mcmurray-tech
     restart: unless-stopped
     networks:

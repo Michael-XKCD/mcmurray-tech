@@ -22,6 +22,18 @@ rm -rf public && hugo --minify
 
 Publish the contents of `public/` via Nginx, Nginx Proxy Manager, or Cloudflare Tunnel.
 
+## Container Runtime
+
+The repo also publishes a public GHCR image and ships a deployment-oriented
+`docker-compose.yml` that runs that published image:
+
+```bash
+docker compose --env-file .env.example up -d
+```
+
+Local content/theme development should still use `hugo server -D` or direct image builds
+from the `Dockerfile` rather than relying on the runtime compose file to build locally.
+
 ## Content Editing Guide
 
 All content is located in: `content/_index.md`
