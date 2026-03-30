@@ -20,10 +20,10 @@ jobs:
           submodules: recursive
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@4abf8b7b93d79b8f7d3e1edd2a0b953c4fcc8f5b
+        uses: docker/setup-buildx-action@v3
 
       - name: Log in to GitHub Container Registry
-        uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -31,7 +31,7 @@ jobs:
 
       - name: Extract image metadata
         id: meta
-        uses: docker/metadata-action@902fa8ec7d6ecbf8d84e35d6c9f8d19f12d8d0f0
+        uses: docker/metadata-action@v5
         with:
           images: ghcr.io/${{ github.repository_owner }}/mcmurray-tech
           tags: |
@@ -40,7 +40,7 @@ jobs:
             type=sha
 
       - name: Build and push image
-        uses: docker/build-push-action@5cdde6f31f33b5d95f1a6f917ea1940d5209d36c
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: ./Dockerfile
